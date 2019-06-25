@@ -1,2 +1,2 @@
-# CrystalCount
-Can you get to exact number? Collect your crystals and see!
+# Mario Count
+Can you get to exact total? Collect your items and see!
