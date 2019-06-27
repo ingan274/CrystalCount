@@ -96,14 +96,22 @@ body {
     border: 5px solid black
 }
 
+/* Object styling/hover/active */
+
 .indobj {
-    margin: 35px 27px 10px 27px;
+    margin: 32px 28px 10px 27px;
     padding: 10px 15px 10px 15px;
     background-color: rgba(255, 255, 255, 0.5);
     border: 5px solid black;
 
     width: 110pt;
     height: 100pt;
+}
+.indobj:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.indobj:active {
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 /* Play Button */

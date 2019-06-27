@@ -1,11 +1,13 @@
 // VARIABLES
 
+//randomly gen. goal number
 var goalnumber = 52;
 
-var counter = 0;
-$('#usernumber').text(counter);
-
+//randomly gen. object number
 var numberOptions = [10, 5, 3, 7];
+
+// user counter
+var counter = 0;
 
 // HTML references
 
@@ -13,22 +15,33 @@ var numberOptions = [10, 5, 3, 7];
 
 // each number associated with object
 var imgNumber = [0, 1, 2, 3]
-// inserting image
+
 for (var number of imgNumber) {
+    // inserting image
     var objectImage = $("<img>");
     objectImage.attr("src", "assets/img/obj_" + number + ".png");
-    objectImage.addClass('indobj');
     objectImage.appendTo('.objectstopress');
-};
+    objectImage.addClass('indobj');
 
-
-var objectButton = ('<button>' + objectImage + '</button>');
-
-for (var increaseNumber of numberOptions) {
-
-
-
+    // Associating a Number to an Object button
+    for (var increaseNumber of numberOptions) {
+        $(objectImage).attr("objectvalue", increaseNumber);
+    }
 }
+
+
+
+// on click increasing user number
+$('indobj').on("click", function () {
+    var objectValue = ($(this).attr("objectValue"));
+    objectValue = parsInt(objectValue);
+    counter = function () {
+        $('#counternumber') = ("#counternumber" + objectValue);
+    }
+});
+
+
+
 
 
 // FUNCTIONS
@@ -37,6 +50,7 @@ for (var increaseNumber of numberOptions) {
 $('#startbutton').on("click", function () {
     $('.game').show();
     $('#startbutton').hide();
+    $('.objectstopress').hide();
     //insert play function
 });
 
@@ -44,5 +58,6 @@ $('#startbutton').on("click", function () {
 $('#showbutton').on("click", function () {
     $('#showbutton').hide();
     $('#randomanswer').text(goalnumber);
+    $('.objectstopress').show();
     //insert play function
 });
