@@ -9,22 +9,24 @@ var numberOptions = [10, 5, 3, 7];
 
 // HTML references
 
-// BUTTONS (Creating)
+// OBJECT  BUTTONS (Creating)
+
+// each number associated with object
+var imgNumber = [0, 1, 2, 3]
+// inserting image
+for (var number of imgNumber) {
+    var objectImage = $("<img>");
+    objectImage.attr("src", "assets/img/obj_" + number + ".png");
+    objectImage.addClass('indobj');
+    objectImage.appendTo('.objectstopress');
+};
+
+
+var objectButton = ('<button>' + objectImage + '</button>');
 
 for (var increaseNumber of numberOptions) {
 
-    // each number associated with object
-    var imgNumber = [0, 1, 2, 3];
-    // inserting image
-    var objectImage = $("<img>");
-    for (var number of imgNumber) {
-        objectImage.attr("src", "assets/img/obj_" + number + ".png");
-    };
 
-    objectImage.addClass('indobj');
-    objectImage.appendTo('.objectstopress');
-
-    var objectButton = ('<button>' + objectImage + '</button>');
 
 }
 
