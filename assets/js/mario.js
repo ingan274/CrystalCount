@@ -51,6 +51,7 @@ $(document).ready(function () {
     // Win/Lose Variables
     var gameWin = 0;
     console.log(gameWin)
+    // WHY IS MY GAME WIN AND LOSE NOT SHOWING UP???????
     $("#yay").text(gameWin);
     var gameLose = 0;
     $("#nay").text(gameLose);
@@ -62,21 +63,35 @@ $(document).ready(function () {
         // 5. When added score reaches the same number as the random score, user wins
         if (counter === goalNumber) {
             gameWin++;
-            // reset()
+            reset()
             $("#yay").text(gameWin);
             alert("Great Job! You Won!")
         }
 
         // 6. When addes score reaches over the same number as the random score,, user losses
-
         else if (counter >= goalNumber) {
             gameLose++;
-            // reset()
+            reset()
             $("#nay").text(gameLose);
             alert("Oops! You went too far over! Try again next time.")
         }
     });
 
     // 7. Each time when the game starts, the game will change the values of each crystal
+    function reset() {
+        // 1. Reset number for the user to "get"
+        var goalNumber = Math.floor(Math.random() * 61) + 40;
+        $('#randomanswer').text(goalNumber);
 
+        // 2. Reassign a points to each object
+        var shellValue = Math.floor(Math.random() * 10) + 1;
+        var starValue = Math.floor(Math.random() * 10) + 1;
+        var mushroomValue = Math.floor(Math.random() * 10) + 1;
+        var bananaValue = Math.floor(Math.random() * 10) + 1;
+
+        // 3. setting counter to 0
+        counter = 0
+        $("#usernumber").text(counter);
+
+    }
 });
