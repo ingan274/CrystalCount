@@ -1,63 +1,82 @@
-// VARIABLES
+// Game controls:
+// 1. Generate a random number for the user to "get"
+// 2. Assign a points to each object
+// 3. Display object points only when clicked on
+// 4. Ater a object is clicked, add points together and display total score.
+// 5. When added score reaches the same number as the random score, user wins.
+// 6. When addes score reaches over the same number as the random score,, user losses.
+// 7. Each time when the game starts, the game will change the values of each crystal.
 
-//randomly gen. goal number
-var goalnumber = 52;
+$(document).ready(function () {
+    // 0. Fun Game Set Up
+    // Play Button
+    $('#startbutton').on("click", function () {
+        $('.game').show();
+        $('#startbutton').hide();
+        $('.objectstopress').hide();
+        $('.winlose').hide();
+    });
 
-//randomly gen. object number
-var numberOptions = [10, 5, 3, 7];
+    // Generate Number Button
+    $('#showbutton').on("click", function () {
+        $('#showbutton').hide();
+        $('#randomanswer').text(goalNumber);
+        $('.objectstopress').show();
+        $('.winlose').show();
+    });
 
-// user counter
-var counter = 0;
+    // 1. Generate a random number for the user to "get"
+    var goalNumber = Math.floor(Math.random() * 61) + 40;
 
-// HTML references
+    // 2. Assign a points to each object
 
-// OBJECT  BUTTONS (Creating)
+    var shellValue = Math.floor(Math.random() * 10) + 1;
+    var starValue = Math.floor(Math.random() * 10) + 1;
+    var mushroomValue = Math.floor(Math.random() * 10) + 1;
+    var bananaValue = Math.floor(Math.random() * 10) + 1;
 
-// each number associated with object
-var imgNumber = [0, 1, 2, 3]
+    // 3. Display object points only when clicked on
+    $("img").addClass('indObject');
 
-for (var number of imgNumber) {
-    // inserting image
-    var objectImage = $("<img>");
-    objectImage.attr("src", "assets/img/obj_" + number + ".png");
-    objectImage.appendTo('.objectstopress');
-    objectImage.addClass('indobj');
+    $(function () {
+        $("#shell").attr("value", shellValue);
+        $("#star").attr("value", starValue);
+        $("#mushroom").attr("value", mushroomValue);
+        $("#banana").attr("value", bananaValue);
+    })
 
-    // Associating a Number to an Object button
-    for (var increaseNumber of numberOptions) {
-        $(objectImage).attr("objectvalue", increaseNumber);
-    }
-}
+    // 4. Ater a object is clicked, add points together and display total score
+    // user counter
+    var counter = 0;
+    // Win/Lose Variables
+    var gameWin = 0;
+    console.log(gameWin)
+    $("#yay").text(gameWin);
+    var gameLose = 0;
+    $("#nay").text(gameLose);
 
+    $('.indObject').click(function () {
+        counter = Number(counter) + Number($(this).attr("value"));
+        $("#usernumber").text(counter);
 
+        // 5. When added score reaches the same number as the random score, user wins
+        if (counter === goalNumber) {
+            gameWin++;
+            // reset()
+            $("#yay").text(gameWin);
+            alert("Great Job! You Won!")
+        }
 
-// on click increasing user number
-$('indobj').on("click", function () {
-    var objectValue = ($(this).attr("objectValue"));
-    objectValue = parsInt(objectValue);
-    counter = function () {
-        $('#counternumber') = ("#counternumber" + objectValue);
-    }
-});
+        // 6. When addes score reaches over the same number as the random score,, user losses
 
+        else if (counter >= goalNumber) {
+            gameLose++;
+            // reset()
+            $("#nay").text(gameLose);
+            alert("Oops! You went too far over! Try again next time.")
+        }
+    });
 
+    // 7. Each time when the game starts, the game will change the values of each crystal
 
-
-
-// FUNCTIONS
-
-// Play Button
-$('#startbutton').on("click", function () {
-    $('.game').show();
-    $('#startbutton').hide();
-    $('.objectstopress').hide();
-    //insert play function
-});
-
-// Generate Number Button
-$('#showbutton').on("click", function () {
-    $('#showbutton').hide();
-    $('#randomanswer').text(goalnumber);
-    $('.objectstopress').show();
-    //insert play function
 });

@@ -81,6 +81,9 @@ body {
 #covernumber {
     height: 130px;
     margin: 0px auto;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
 }
 
 .numberbox{
@@ -96,21 +99,46 @@ body {
     border: 5px solid black
 }
 
+/* Total Wins and Loses */
+
+.scoretitle {
+    font-family: var(--title3-font);
+    font-size: 12pt;
+    color: black;
+    margin: 10px auto;
+    margin-top: 13px;
+    text-align: center;
+}
+
+.score {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 5px solid black;
+    width: 60pt;
+    height: 60pt;
+    margin: 10px auto;
+    padding: 22px 10px 10px 10px;
+
+    font-family: var(--title3-font);
+    font-size: 18pt;
+    color: white;
+    text-align: center;
+}
+
 /* Object styling/hover/active */
 
-.indobj {
-    margin: 32px 28px 10px 27px;
+.indObject {
+    margin: 32px 27px 10px 25px;
     padding: 10px 15px 10px 15px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.3);
     border: 5px solid black;
 
     width: 110pt;
     height: 100pt;
 }
-.indobj:hover {
-    background-color: rgba(255, 255, 255, 0.7);
+.indObject:hover {
+    background-color: rgba(255, 255, 255, 0.6);
 }
-.indobj:active {
+.inindObjectdobj:active {
     background-color: rgba(255, 255, 255, 0.9);
 }
 
