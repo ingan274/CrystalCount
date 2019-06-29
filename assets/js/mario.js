@@ -7,6 +7,7 @@
 // 6. When addes score reaches over the same number as the random score,, user losses.
 // 7. Each time when the game starts, the game will change the values of each crystal.
 
+
 $(document).ready(function () {
     // 0. Fun Game Set Up
     // Play Button
@@ -25,6 +26,22 @@ $(document).ready(function () {
         $('.winlose').show();
     });
 
+    // 0.1 Creating buttons
+    // creating images
+
+    // each number associated with object
+    var imgNumber = [0, 1, 2, 3]
+    // inserting image
+
+    for (var number of imgNumber) {
+        // inserting image
+        var objectImage = $("<img>");
+        objectImage.attr("src", "assets/img/obj_" + number + ".png");
+        objectImage.addClass('indobj');
+        objectImage.appendTo('.objectstopress');
+        objectImage.attr("id", "obj_" + number)
+    };
+
     // 1. Generate a random number for the user to "get"
     var goalNumber = Math.floor(Math.random() * 61) + 40;
 
@@ -39,10 +56,10 @@ $(document).ready(function () {
     $("img").addClass('indObject');
 
     $(function () {
-        $("#shell").attr("value", shellValue);
-        $("#star").attr("value", starValue);
-        $("#mushroom").attr("value", mushroomValue);
-        $("#banana").attr("value", bananaValue);
+        $("#obj_0").attr("value", shellValue);
+        $("#obj_1").attr("value", starValue);
+        $("#obj_2").attr("value", mushroomValue);
+        $("#obj_3").attr("value", bananaValue);
     })
 
     // 4. Ater a object is clicked, add points together and display total score
@@ -79,14 +96,14 @@ $(document).ready(function () {
     // 7. Each time when the game starts, the game will change the values of each crystal
     function reset() {
         // 1. Reset number for the user to "get"
-         goalNumber = Math.floor(Math.random() * 61) + 40;
+        goalNumber = Math.floor(Math.random() * 61) + 40;
         $('#randomanswer').text(goalNumber);
 
         // 2. Reassign a points to each object
-         shellValue = Math.floor(Math.random() * 10) + 1;
-         starValue = Math.floor(Math.random() * 10) + 1;
-         mushroomValue = Math.floor(Math.random() * 10) + 1;
-         bananaValue = Math.floor(Math.random() * 10) + 1;
+        shellValue = Math.floor(Math.random() * 10) + 1;
+        starValue = Math.floor(Math.random() * 10) + 1;
+        mushroomValue = Math.floor(Math.random() * 10) + 1;
+        bananaValue = Math.floor(Math.random() * 10) + 1;
 
         // 3. setting counter to 0
         counter = 0
