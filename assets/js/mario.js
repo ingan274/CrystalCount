@@ -50,8 +50,7 @@ $(document).ready(function () {
     var counter = 0;
     // Win/Lose Variables
     var gameWin = 0;
-    console.log(gameWin)
-    // WHY IS MY GAME WIN AND LOSE NOT SHOWING UP???????
+    // showing in HTML
     $("#yay").text(gameWin);
     var gameLose = 0;
     $("#nay").text(gameLose);
@@ -80,14 +79,14 @@ $(document).ready(function () {
     // 7. Each time when the game starts, the game will change the values of each crystal
     function reset() {
         // 1. Reset number for the user to "get"
-        var goalNumber = Math.floor(Math.random() * 61) + 40;
+         goalNumber = Math.floor(Math.random() * 61) + 40;
         $('#randomanswer').text(goalNumber);
 
         // 2. Reassign a points to each object
-        var shellValue = Math.floor(Math.random() * 10) + 1;
-        var starValue = Math.floor(Math.random() * 10) + 1;
-        var mushroomValue = Math.floor(Math.random() * 10) + 1;
-        var bananaValue = Math.floor(Math.random() * 10) + 1;
+         shellValue = Math.floor(Math.random() * 10) + 1;
+         starValue = Math.floor(Math.random() * 10) + 1;
+         mushroomValue = Math.floor(Math.random() * 10) + 1;
+         bananaValue = Math.floor(Math.random() * 10) + 1;
 
         // 3. setting counter to 0
         counter = 0
