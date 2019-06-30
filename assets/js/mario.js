@@ -47,8 +47,8 @@ $(document).ready(function () {
 
     // 2. Assign a points to each object
 
-    function randomObjectNumber () {
-        Math.floor(Math.random() * 10) + 1;
+    function randomObjectNumber() {
+        return Math.floor(Math.random() * 10) + 1;
     }
 
     var shellValue = randomObjectNumber();
@@ -75,7 +75,11 @@ $(document).ready(function () {
     $("#nay").text(gameLose);
 
     $('.indObject').click(function () {
-        counter = Number(counter) + Number($(this).attr("value"));
+        var counterNumber = parseInt(counter);
+        var objectValue = $(this).attr("value");
+
+        counter = counterNumber + parseInt(objectValue);
+        
         $("#usernumber").text(counter);
 
         // 5. When added score reaches the same number as the random score, user wins
