@@ -2,7 +2,7 @@
 // 1. Generate a random number for the user to "get"
 // 2. Assign a points to each object
 // 3. Display object points only when clicked on
-// 4. Ater a object is clicked, add points together and display total score.
+// 4. After a object is clicked, add points together and display total score.
 // 5. When added score reaches the same number as the random score, user wins.
 // 6. When addes score reaches over the same number as the random score,, user losses.
 // 7. Each time when the game starts, the game will change the values of each crystal.
@@ -64,7 +64,7 @@ $(document).ready(function () {
         $("#obj_3").attr("value", bananaValue);
     })
 
-    // 4. Ater a object is clicked, add points together and display total score
+    // 4. After a object is clicked, add points together and display total score
     // user counter
     var counter = 0;
     // Win/Lose Variables
