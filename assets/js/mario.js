@@ -37,7 +37,7 @@ $(document).ready(function () {
         // inserting image
         var objectImage = $("<img>");
         objectImage.attr("src", "assets/img/obj_" + number + ".png");
-        objectImage.addClass('indobj');
+        objectImage.addClass('indObject');
         objectImage.appendTo('.objectstopress');
         objectImage.attr("id", "obj_" + number)
     };
@@ -47,14 +47,16 @@ $(document).ready(function () {
 
     // 2. Assign a points to each object
 
-    var shellValue = Math.floor(Math.random() * 10) + 1;
-    var starValue = Math.floor(Math.random() * 10) + 1;
-    var mushroomValue = Math.floor(Math.random() * 10) + 1;
-    var bananaValue = Math.floor(Math.random() * 10) + 1;
+    function randomObjectNumber () {
+        Math.floor(Math.random() * 10) + 1;
+    }
+
+    var shellValue = randomObjectNumber();
+    var starValue = randomObjectNumber();
+    var mushroomValue = randomObjectNumber();
+    var bananaValue = randomObjectNumber();
 
     // 3. Display object points only when clicked on
-    $("img").addClass('indObject');
-
     $(function () {
         $("#obj_0").attr("value", shellValue);
         $("#obj_1").attr("value", starValue);
