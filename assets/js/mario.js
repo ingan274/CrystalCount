@@ -79,7 +79,7 @@ $(document).ready(function () {
         var objectValue = $(this).attr("value");
 
         counter = counterNumber + parseInt(objectValue);
-        
+
         $("#usernumber").text(counter);
 
         // 5. When added score reaches the same number as the random score, user wins
@@ -106,10 +106,17 @@ $(document).ready(function () {
         $('#randomanswer').text(goalNumber);
 
         // 2. Reassign a points to each object
-        shellValue = Math.floor(Math.random() * 10) + 1;
-        starValue = Math.floor(Math.random() * 10) + 1;
-        mushroomValue = Math.floor(Math.random() * 10) + 1;
-        bananaValue = Math.floor(Math.random() * 10) + 1;
+        shellValue = randomObjectNumber();
+        starValue = randomObjectNumber();
+        mushroomValue = randomObjectNumber();
+        bananaValue = randomObjectNumber();
+
+        $(function () {
+            $("#obj_0").attr("value", shellValue);
+            $("#obj_1").attr("value", starValue);
+            $("#obj_2").attr("value", mushroomValue);
+            $("#obj_3").attr("value", bananaValue);
+        })
 
         // 3. setting counter to 0
         counter = 0
