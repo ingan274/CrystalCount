@@ -57,6 +57,47 @@ body {
     font-size: 16pt;
 }
 
+/* RULES */
+body {
+    position: relative;
+}
+
+.rules {
+    position: fixed;
+    right: 15px;
+    top: 10px;
+
+    font-family: var(--title2-font);
+    font-size: 25px;
+    color: black;
+    background: white;
+    border: 5px solid black;
+}
+
+.modalCloseBtn{
+    font-family: var(--title2-font);
+    font-size: 25px;
+    color: black;
+    background: white;
+    border: 5px solid black;
+}
+
+.rules:hover, .modalCloseBtn:hover {
+    color: white;
+    background: black;
+    border: 5px solid white;
+}
+
+.modal-body {
+    font-family: var(--title2-font);
+    font-size: 25px;
+}
+
+.modal-title {
+    font-family: var(--title1-font);
+    font-size: 15px;
+}
+
 /* Game Board */
 .game{
     display: none;
