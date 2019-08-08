@@ -1,5 +1,7 @@
 # Mario Count
 Can you get to exact total? Collect your items and see!
+<br>
+Play Here: https://ingan274.github.io/MarioCount/
 # How to play
 1. See target number
 2. Each object is associated with a different, random number that will increase your number to the target
